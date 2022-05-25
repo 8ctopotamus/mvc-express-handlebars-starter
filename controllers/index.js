@@ -21,19 +21,33 @@ router.get('/api/:animalType/:animalId', (req, res) => {
 
 // View Routes
 router.get('/', (req, res) => {
-  res.render('home')
+  const dogs = animals.filter(animal => animal.type === 'dog')
+  const cats = animals.filter(animal => animal.type === 'cat')
+  res.render('home', { dogs, cats })
 })
 
 router.get('/dogs', (req, res) => {
-  res.render('animal-by-type')
+  const dogs = animals.filter(animal => animal.type === 'dog')
+  res.render('animal-by-type', { 
+    animals: dogs,
+    title: 'Dogs'
+  })
 })
 
 router.get('/cats', (req, res) => {
-  res.render('animal-by-type')
+  const cats = animals.filter(animal => animal.type === 'cat')
+  res.render('animal-by-type', { 
+    animals: cats,
+    title: 'Cats'
+  })
 })
 
 router.get('/animal/:animalType/:id', (req, res) => {
-  res.render('animal-single')
+  const { animalType, id } = req.params
+  const foundAnimal = animals.find(animal => {
+    return animalType === animal.type && id == animal.id
+  })
+  res.render('animal-single', { animal: foundAnimal })
 })
 
 module.exports = router

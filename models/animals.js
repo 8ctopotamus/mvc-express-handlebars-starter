@@ -27,7 +27,7 @@ const animals = [
     id: 4,
     name: 'Markie',
     age: 6,
-    imageUrl: 'https://placedog.net/500/500?r',
+    imageUrl: 'https://placekitten.com/500',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse minus, perferendis rerum minima voluptatem veritatis soluta.',
     type: 'cat'
   },

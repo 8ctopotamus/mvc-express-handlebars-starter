@@ -1,4 +1,8 @@
 <div class="container">
-  <h1></h1>
-  <ul class="list-group"></ul>
+  <h1>{{title}}</h1>
+  <ul class="list-group">
+    {{#each animals}}
+      {{> list-item }}
+    {{/each}}
+  </ul>
 </div>

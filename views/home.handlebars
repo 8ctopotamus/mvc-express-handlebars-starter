@@ -1,14 +1,24 @@
 <div class="container">
-  <h1>All Pets</h1>
+  <h1>All Animals</h1>
+
   <h2>
     <a href="/dogs">Dogs</a>
   </h2>
-  <ul id="dogs" class="list-group"></ul>
+  
+  <ul id="dogs" class="list-group">
+    {{#each dogs}}
+      {{> list-item}}
+    {{/each}}
+  </ul>
 
   <br/>
 
   <h2>
     <a href="/cats">Cats</a>
   </h2>
-  <ul id="cats" class="list-group"></ul>
+  <ul id="cats" class="list-group">
+    {{#each cats}}
+      {{> list-item}}
+    {{/each}}
+  </ul>
 </div>
