@@ -19,21 +19,21 @@ router.get('/api/:animalType/:animalId', (req, res) => {
   res.json(foundAnimal)
 })
 
-// HTML Routes
+// View Routes
 router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'))
+  res.render('home')
 })
 
 router.get('/dogs', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'animals-by-type.html'))
+  res.render('animal-by-type')
 })
 
 router.get('/cats', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'animals-by-type.html'))
+  res.render('animal-by-type')
 })
 
 router.get('/animal/:animalType/:id', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'animal-single.html'))
+  res.render('animal-single')
 })
 
 module.exports = router
